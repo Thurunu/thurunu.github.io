@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thurunu Mihiranga</title>
+    <link rel = "stylesheet" href = "style.css"/>
+    <script src="https://kit.fontawesome.com/2dcf2398f2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id = "header">
+        <div class = "container">
+            <nav> <!-- using nav tag we can link parts of the page -->
+                <img src = "Logo 1.jpg" class = "logo">
+                <ul id="sidemenu"><!-- Menu Bar -->
+                    <li> <a href = "#header">Home</a> </li>
+                    <li> <a href = "#about">About</a> </li>
+                    <li> <a href = "#services">Services</a> </li>
+                    <li> <a href = "#contact">Contact</a> </li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Hello, My name is</p>
+                <h1><span>Thurunu</span> Mihiranga</h1>
+                <h1>&nbsp&nbsp I'm a Game Developer</h1>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src = "User.jpg">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="subtitle">About Me</h1>
+                        <br>
+                    <p>I'm interested in game development,web design, graphic design and app development.
+                        <br> I like to do lot of extra curricular activities. I also love reading more about
+                         technology<br> and how it works.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experinece</p>
+                        <p class="tab-links" onclick="opentab('education')" >Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Game Development</span><br>Develop Games using Unity/Unreal Engine</li>
+                            <li><span>Web Development</span><br>Develop Web Applications using Adobe Dreamwever/VS Code</li>
+                            <li><span>App Development</span><br>Develop Android/ios Applications using andrroid studio/Flutter</li>
+                            <li><span>Graphic Design</span><br>Graphic Design using Adobe Photoshop/Adobe Illustrator</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2022 - Current</span><br>Develop Games in RAM Studio</li>
+                            <li><span>2020 - 2021</span><br>Develop Web Applications in Fiverr</li>
+                            <li><span>2020 - 2021</span><br>Develop Android/ios Applications in Fiverr/Freelancer</li>
+                            <li><span>2016 - 2021</span><br>Graphic Design in Fiverr</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2016</span><br>Passed O/L</li>
+                            <li><span>2019</span><br>Passed A/L</li>
+                            <li><span>2022</span><br>Reading in Bachelor of Computer Science</li>
+                           
+                        </ul>
+                    </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    
+    <div id="services">
+        <div class="container">
+            <h1 class="subtitle">My Services</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-headset"></i>      
+                    <h2>Game Develop</h2>
+                    <p>It's timme to explore a new world, new encounters, and
+                         new civilizations. I have set up a world waiting for you
+                         to create your own story. <br>
+                         <a href="#">Learn More</a>
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App Develop</h2>
+                    <p>Get your hands on my latest app. Get it before its gone. <br>
+                         <a href="#">Learn More</a>
+                    </p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Develop</h2>
+                    <p>i'm a web developer, I make websites. I like to design and build
+                        functional websites. <br>
+                         <a href="#">Learn More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+    
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="subtitle">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i> mthurunu@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 0769771656</p>
+                    <div class="social-icons">
+                        <a href= "https://www.facebook.com/thurunu.mihiranga.2115"><i class="fa-brands fa-facebook"></i></a>
+                        <a href= "https://www.instagram.com/thurunu.lk/?fbclid=IwAR2OM_ek1UxcxmlfZBAhEChLFXFomcCPIz9J8RWgVX7Aax3BSVdeeqDVv-c"><i class="fa-brands fa-instagram"></i></a>
+                        <a href= "https://wtsi.me/94769771656"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href= "https://www.linkedin.com/in/thurunu-mihiranga-71341b1a9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BEwpKxGENT%2Fm%2FkHEGtG1REg%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <a href="My CV.docx" download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right"></div>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright @ Thurunu. Made with the help of youtube tutorials.</p>
+        </div>
+    </div>
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+    <script>
+
+        var sidemen = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemen.style.right = "0";
+        }
+        function closemenu(){
+            sidemen.style.right = "-200px";
+        }
+    </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby7saMIJ00mtDlq1M05eC-HEjP5tIfDR_UOX7WstdCgg3SJ4g8Vnvm_eEr-rbOSBOyV/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully !"
+            setTimeout(function(){
+             msg.innerHTML = ""},5000)
+             form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
