@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thurunu Mihiranga</title>
     <link rel = "stylesheet" href = "style.css"/>
+    <script type="text/javascript" src="script.js"></script>  
     <script src="https://kit.fontawesome.com/2dcf2398f2.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id = "header">
         <div class = "container">
             <nav> <!-- using nav tag we can link parts of the page -->
-                <img src = "Logo 1.jpg" class = "logo">
+                <img src = "Imgaes/Logo 1.jpg" class = "logo">
                 <ul id="sidemenu"><!-- Menu Bar -->
                     <li> <a href = "#header">Home</a> </li>
                     <li> <a href = "#about">About</a> </li>
                     <li> <a href = "#services">Services</a> </li>
                     <li> <a href = "#contact">Contact</a> </li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
-                </ul>a
+                </ul>
                 <i class="fas fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
@@ -34,7 +35,7 @@
             <div class="container">
                 <div class="row">
                     <div class="about-col-1">
-                        <img src = "User.jpg">
+                        <img src = "Imgaes/User.jpg">
                     </div>
                     <div class="about-col-2">
                         <h1 class="subtitle">About Me</h1>
@@ -131,7 +132,7 @@
                         <a href= "https://wtsi.me/94769771656"><i class="fa-brands fa-whatsapp"></i></a>
                         <a href= "https://www.linkedin.com/in/thurunu-mihiranga-71341b1a9?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BEwpKxGENT%2Fm%2FkHEGtG1REg%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
                     </div>
-                    <a href="My CV.docx" download class="btn">Download CV</a>
+                    <a href="Downloads/My CV.docx" download class="btn">Download CV</a>
                 </div>
                 <div class="contact-right"></div>
                 <form name="submit-to-google-sheet">
@@ -148,52 +149,7 @@
         </div>
     </div>
 
-    <script>
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-        
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-    </script>
-
-    <script>
-
-        var sidemen = document.getElementById("sidemenu");
-
-        function openmenu(){
-            sidemen.style.right = "0";
-        }
-        function closemenu(){
-            sidemen.style.right = "-200px";
-        }
-    </script>
-
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycby7saMIJ00mtDlq1M05eC-HEjP5tIfDR_UOX7WstdCgg3SJ4g8Vnvm_eEr-rbOSBOyV/exec'
-    const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully !"
-            setTimeout(function(){
-             msg.innerHTML = ""},5000)
-             form.reset()
-        })
-        .catch(error => console.error('Error!', error.message))
-    })
-  </script>
 
 </body>
 </html>
