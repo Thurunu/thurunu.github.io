@@ -209,6 +209,9 @@ const githubData = {
             
             // Initialize GitHub contribution calendar
             initializeGitHubCalendar();
+            
+            // Initialize debugging animation
+            initializeDebugAnimation();
         });
 
         // Contact form submission handler
@@ -721,4 +724,168 @@ const githubData = {
             if (totalElement) {
                 totalElement.textContent = totalContributions;
             }
+        }
+
+        // Debug Animation
+        function initializeDebugAnimation() {
+            const codeLines = document.querySelectorAll('.code-line');
+            const debugCursor = document.querySelector('.debug-cursor');
+            const breakpoints = document.querySelectorAll('.breakpoint');
+            
+            if (!codeLines.length || !debugCursor) return;
+            
+            let currentLine = 0;
+            let isDebugging = false;
+            
+            // Debug control buttons
+            const debugBtns = document.querySelectorAll('.debug-btn');
+            debugBtns.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    if (index === 0) { // Play
+                        startDebugging();
+                    } else if (index === 1) { // Pause
+                        pauseDebugging();
+                    } else if (index === 2) { // Stop
+                        stopDebugging();
+                    }
+                });
+            });
+            
+            // Breakpoint click handlers
+            breakpoints.forEach((bp, index) => {
+                bp.addEventListener('click', () => {
+                    bp.classList.toggle('active');
+                });
+            });
+            
+            function startDebugging() {
+                if (isDebugging) return;
+                isDebugging = true;
+                debugBtns[0].classList.add('active');
+                debugBtns[1].classList.remove('active');
+                debugBtns[2].classList.remove('active');
+                
+                // Reset cursor position
+                currentLine = 0;
+                moveCursorToLine(0);
+                
+                // Start step-by-step execution
+                executeDebugStep();
+            }
+            
+            function pauseDebugging() {
+                isDebugging = false;
+                debugBtns[0].classList.remove('active');
+                debugBtns[1].classList.add('active');
+            }
+            
+            function stopDebugging() {
+                isDebugging = false;
+                debugBtns[0].classList.remove('active');
+                debugBtns[1].classList.remove('active');
+                debugBtns[2].classList.add('active');
+                
+                // Reset all lines
+                codeLines.forEach(line => {
+                    line.classList.remove('debugging', 'debug-step');
+                });
+                
+                // Hide cursor
+                debugCursor.style.display = 'none';
+                
+                // Reset after a delay
+                setTimeout(() => {
+                    debugBtns[2].classList.remove('active');
+                    debugCursor.style.display = 'block';
+                    moveCursorToLine(0);
+                }, 1000);
+            }
+            
+            function executeDebugStep() {
+                if (!isDebugging) return;
+                
+                // Clear previous debugging state
+                codeLines.forEach(line => {
+                    line.classList.remove('debugging', 'debug-step');
+                });
+                
+                if (currentLine < codeLines.length) {
+                    const line = codeLines[currentLine];
+                    
+                    // Highlight current line
+                    line.classList.add('debugging');
+                    
+                    // Move cursor to current line
+                    moveCursorToLine(currentLine);
+                    
+                    // Add step animation
+                    setTimeout(() => {
+                        line.classList.add('debug-step');
+                    }, 100);
+                    
+                    // Highlight variables on specific lines
+                    if (currentLine === 3 || currentLine === 4 || currentLine === 5) {
+                        highlightVariables(line);
+                    }
+                    
+                    currentLine++;
+                    
+                    // Continue to next line after delay
+                    setTimeout(() => {
+                        if (isDebugging) {
+                            executeDebugStep();
+                        }
+                    }, 1500);
+                } else {
+                    // Debugging complete
+                    setTimeout(() => {
+                        stopDebugging();
+                        // Restart after a delay
+                        setTimeout(() => {
+                            if (!isDebugging) {
+                                startDebugging();
+                            }
+                        }, 2000);
+                    }, 1000);
+                }
+            }
+            
+            function moveCursorToLine(lineIndex) {
+                const line = codeLines[lineIndex];
+                if (!line) return;
+                
+                const lineRect = line.getBoundingClientRect();
+                const codeContent = line.parentElement;
+                const containerRect = codeContent.getBoundingClientRect();
+                
+                // Calculate position relative to the code content container
+                const top = lineRect.top - containerRect.top + 4;
+                const left = 60; // Fixed left position for cursor
+                
+                // Ensure cursor stays within bounds
+                if (top >= 0 && top <= containerRect.height) {
+                    debugCursor.style.top = `${top}px`;
+                    debugCursor.style.left = `${left}px`;
+                    debugCursor.style.display = 'block';
+                } else {
+                    debugCursor.style.display = 'none';
+                }
+            }
+            
+            function highlightVariables(line) {
+                const variables = line.querySelectorAll('.property');
+                variables.forEach((variable, index) => {
+                    setTimeout(() => {
+                        variable.classList.add('variable-highlight');
+                        setTimeout(() => {
+                            variable.classList.remove('variable-highlight');
+                        }, 1000);
+                    }, index * 200);
+                });
+            }
+            
+            // Start debugging animation after a delay
+            setTimeout(() => {
+                startDebugging();
+            }, 2000);
         }

@@ -415,11 +415,19 @@
         .editor-content {
             flex: 1;
             background: var(--bg-main);
-            padding: 20px;
             overflow-y: auto;
             font-family: 'Fira Code', 'Courier New', monospace;
             line-height: 1.6;
             font-weight: 400;
+        }
+
+        .code-content {
+            position: relative;
+            padding: 12px 0;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            overflow: hidden;
         }
 
         .content-section {
@@ -2117,5 +2125,165 @@
             .stats-group {
                 flex-wrap: wrap;
                 gap: 10px;
+            }
+        }
+
+        /* Debug Animation Styles */
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .debug-controls {
+            display: flex;
+            gap: 4px;
+        }
+
+        .debug-btn {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .debug-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .debug-btn.active {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .code-line {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 2px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        .code-line:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .code-line.debugging {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 3px solid #ffc107;
+        }
+
+        .breakpoint {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .breakpoint.active {
+            background: #ff4757;
+            border-color: #ff4757;
+            box-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .breakpoint:hover {
+            background: #ff4757;
+            border-color: #ff4757;
+            cursor: pointer;
+        }
+
+        .debug-cursor {
+            position: absolute;
+            width: 2px;
+            height: 18px;
+            background: #00ff88;
+            animation: blink 1s infinite;
+            z-index: 10;
+            pointer-events: none;
+            left: 60px;
+            top: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 16px rgba(255, 71, 87, 0.8);
+            }
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes debugStep {
+            0% {
+                background: rgba(255, 193, 7, 0.1);
+                border-left-color: #ffc107;
+            }
+            50% {
+                background: rgba(255, 193, 7, 0.2);
+                border-left-color: #ffc107;
+            }
+            100% {
+                background: transparent;
+                border-left-color: transparent;
+            }
+        }
+
+        .debug-step {
+            animation: debugStep 1s ease-in-out;
+        }
+
+        /* Variable highlighting animation */
+        .variable-highlight {
+            animation: variablePulse 2s ease-in-out;
+        }
+
+        @keyframes variablePulse {
+            0%, 100% {
+                background: transparent;
+            }
+            50% {
+                background: rgba(0, 255, 136, 0.2);
+                border-radius: 2px;
+            }
+        }
+
+        /* Code typing animation */
+        .code-line.typing {
+            animation: typeLine 0.5s ease-in-out;
+        }
+
+        @keyframes typeLine {
+            0% {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
             }
         }
