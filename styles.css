@@ -924,36 +924,45 @@
         .tech-node[data-tech="yaml"] .tech-logo { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yaml/yaml-plain.svg'); }
         .tech-node[data-tech="linux"] .tech-logo { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'); }
         .tech-node[data-tech="windows"] .tech-logo { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg'); }
-
+        .tech-node[data-tech="prometheus"] .tech-logo { background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg'); }
         /* New Scattered "Glass Break" Positions */
-        .tech-node:nth-child(1) { top: 45%; left: 48%; } /* JS */
-        .tech-node:nth-child(2) { top: 20%; left: 35%; } /* React */
-        .tech-node:nth-child(3) { top: 25%; left: 68%; } /* HTML */
-        .tech-node:nth-child(4) { top: 15%; left: 20%; } /* CSS */
-        .tech-node:nth-child(5) { top: 35%; left: 80%; } /* Bootstrap */
-        .tech-node:nth-child(6) { top: 55%; left: 25%; } /* Node.js */
-        .tech-node:nth-child(7) { top: 75%; left: 60%; } /* Express.js */
-        .tech-node:nth-child(8) { top: 30%; left: 10%; } /* Python */
-        .tech-node:nth-child(9) { top: 60%; left: 85%; } /* Flask */
-        .tech-node:nth-child(10) { top: 70%; left: 15%; } /* Java */
-        .tech-node:nth-child(11) { top: 85%; left: 75%; } /* Spring */
-        .tech-node:nth-child(12) { top: 80%; left: 30%; } /* MongoDB */
-        .tech-node:nth-child(13) { top: 65%; left: 70%; } /* MySQL */
-        .tech-node:nth-child(14) { top: 90%; left: 50%; } /* MSSQL */
-        .tech-node:nth-child(15) { top: 88%; left: 10%; } /* Firebase */
-        .tech-node:nth-child(16) { top: 10%; left: 10%; } /* Docker */
-        .tech-node:nth-child(17) { top: 12%; left: 85%; } /* Git */
-        .tech-node:nth-child(18) { top: 5%; left: 40%; } /* GitHub Actions */
-        .tech-node:nth-child(19) { top: 90%; left: 35%; } /* Jenkins */
-        .tech-node:nth-child(20) { top: 8%; left: 60%; } /* Terraform */
-        .tech-node:nth-child(21) { top: 35%; left: 55%; } /* AWS */
-        .tech-node:nth-child(22) { top: 60%; left: 45%; } /* Google Cloud */
-        .tech-node:nth-child(23) { top: 45%; left: 15%; } /* C */
-        .tech-node:nth-child(24) { top: 78%; left: 45%; } /* SQL */
-        .tech-node:nth-child(25) { top: 85%; left: 90%; } /* XML */
-        .tech-node:nth-child(26) { top: 70%; left: 90%; } /* YAML */
-        .tech-node:nth-child(27) { top: 48%; left: 30%; } /* Linux */
-        .tech-node:nth-child(28) { top: 53%; left: 70%; } /* Windows */
+.tech-node:nth-child(1)  { top: 5%;  left: 5%;  }
+.tech-node:nth-child(2)  { top: 5%;  left: 25%; }
+.tech-node:nth-child(3)  { top: 5%;  left: 45%; }
+.tech-node:nth-child(4)  { top: 5%;  left: 65%; }
+.tech-node:nth-child(5)  { top: 5%;  left: 80%; }
+
+.tech-node:nth-child(6)  { top: 20%; left: 10%; }
+.tech-node:nth-child(7)  { top: 20%; left: 30%; }
+.tech-node:nth-child(8)  { top: 20%; left: 50%; }
+.tech-node:nth-child(9)  { top: 20%; left: 70%; }
+.tech-node:nth-child(10) { top: 20%; left: 85%; }
+
+.tech-node:nth-child(11) { top: 40%; left: 5%;  }
+.tech-node:nth-child(12) { top: 40%; left: 25%; }
+.tech-node:nth-child(13) { top: 40%; left: 45%; }
+.tech-node:nth-child(14) { top: 40%; left: 65%; }
+.tech-node:nth-child(15) { top: 40%; left: 80%; }
+
+.tech-node:nth-child(16) { top: 60%; left: 10%; }
+.tech-node:nth-child(17) { top: 60%; left: 30%; }
+.tech-node:nth-child(18) { top: 60%; left: 50%; }
+.tech-node:nth-child(19) { top: 60%; left: 70%; }
+.tech-node:nth-child(20) { top: 60%; left: 85%; }
+
+.tech-node:nth-child(21) { top: 75%; left: 5%;  }
+.tech-node:nth-child(22) { top: 75%; left: 25%; }
+.tech-node:nth-child(23) { top: 75%; left: 45%; }
+.tech-node:nth-child(24) { top: 75%; left: 65%; }
+.tech-node:nth-child(25) { top: 75%; left: 80%; }
+
+.tech-node:nth-child(26) { top: 85%; left: 10%; }
+.tech-node:nth-child(27) { top: 85%; left: 30%; }
+.tech-node:nth-child(28) { top: 85%; left: 50%; }
+.tech-node:nth-child(29) { top: 85%; left: 70%; }
+
+
+
 
         @keyframes glass-break {
             0% {
@@ -1948,11 +1957,20 @@
         }
 
         .github-contributions {
-            background: var(--bg-secondary);
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .contribution-summary {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .total-contributions {
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 1.3rem;
         }
 
         .contribution-calendar {
