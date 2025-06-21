@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thurunu Mihiranga - Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=file_copy"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title Bar -->
+      <div class="title-bar">
+        <div class="title-bar-left">
+          <div class="vscode-icon"></div>
+          <span class="title-text">Thurunu Mihiranga - Visual Studio Code</span>
+        </div>
+        <div class="window-controls">
+          <div class="control-btn minimize" title="Minimize">
+            <div class="icon">−</div>
+          </div>
+          <div class="control-btn maximize" title="Maximize">
+            <div class="icon">◻</div>
+          </div>
+          <div class="control-btn close" title="Close">
+            <div class="icon">×</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Bar -->
+      <div class="menu-bar">
+        <div class="menu-item">File</div>
+        <div class="menu-item">Edit</div>
+        <div class="menu-item">View</div>
+        <div class="menu-item">Go</div>
+        <div class="menu-item">Run</div>
+        <div class="menu-item">Terminal</div>
+        <div class="menu-item">Help</div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Activity Bar -->
+        <div class="activity-bar">
+          <div
+            class="activity-item active"
+            data-view="explorer"
+            title="Explorer"
+          >
+            <span class="material-symbols-outlined"> file_copy </span>
+          </div>
+          <div class="activity-item" data-view="search" title="Search">🔍</div>
+          <div class="activity-item" data-view="git" title="Source Control">
+            <i class="fa-brands fa-github" style="color: antiquewhite"></i>
+          </div>
+          <div class="activity-item" data-view="debug" title="Run and Debug">
+            🐛
+          </div>
+          <div class="activity-item" data-view="extensions" title="Extensions">
+            ⬜
+          </div>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <div class="sidebar-header">Explorer</div>
+          <div class="file-explorer">
+            <div class="file-item active" data-tab="about">
+              <div class="file-icon">ℹ️</div>
+              <span>about.js</span>
+            </div>
+            <div class="file-item" data-tab="skills">
+              <div class="file-icon">⚙️</div>
+              <span>skills.json</span>
+            </div>
+            <div class="file-item" data-tab="projects">
+              <div class="file-icon">📁</div>
+              <span>projects.html</span>
+            </div>
+            <div class="file-item" data-tab="experience">
+              <div class="file-icon">💼</div>
+              <span>experience.md</span>
+            </div>
+            <div class="file-item" data-tab="contact">
+              <div class="file-icon">📧</div>
+              <span>contact.css</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editor Area -->
+        <div class="editor-area">
+          <!-- Tab Bar -->
+          <div class="tab-bar">
+            <div class="tab active" data-tab="welcome">
+              <span class="tab-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 48 48"
+                >
+                  <linearGradient
+                    id="HjBUFHyNtcsDcBgnZBZ2Sa_0OQR1FYCuA9f_gr1"
+                    x1="37.8"
+                    x2="37.8"
+                    y1="43.37"
+                    y2="7.42"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0" stop-color="#29b6f6"></stop>
+                    <stop offset="1" stop-color="#13b2f6"></stop>
+                  </linearGradient>
+                  <path
+                    fill="url(#HjBUFHyNtcsDcBgnZBZ2Sa_0OQR1FYCuA9f_gr1)"
+                    d="M34.176,4.249c0.188,0.092,5.688,2.716,8.374,3.998C43.437,8.67,44,9.564,44,10.546v26.86	c0,0.981-0.559,1.874-1.443,2.299c-2.548,1.228-7.611,3.666-7.948,3.826C34.361,43.649,33.709,44,33.181,44	c-0.678,0-1.133-0.316-1.58-0.73L34,35.711V5.715l-2.254-1.135C32.228,4.109,32.896,4,33.291,4C33.653,4,33.948,4.138,34.176,4.249z"
+                  ></path>
+                  <linearGradient
+                    id="HjBUFHyNtcsDcBgnZBZ2Sb_0OQR1FYCuA9f_gr2"
+                    x1="6.085"
+                    x2="34.793"
+                    y1="34.801"
+                    y2="7.173"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset=".115" stop-color="#0076bb"></stop>
+                    <stop offset=".257" stop-color="#0069b0"></stop>
+                    <stop offset=".28" stop-color="#0069b0"></stop>
+                    <stop offset=".424" stop-color="#0069b0"></stop>
+                    <stop offset=".491" stop-color="#0072b7"></stop>
+                    <stop offset=".577" stop-color="#0076bb"></stop>
+                    <stop offset=".795" stop-color="#0076bb"></stop>
+                    <stop offset="1" stop-color="#006eb9"></stop>
+                  </linearGradient>
+                  <path
+                    fill="url(#HjBUFHyNtcsDcBgnZBZ2Sb_0OQR1FYCuA9f_gr2)"
+                    d="M9,33.896l25-19.023V5.83c0-1.299-1.662-1.808-2.337-1.184	C31.008,5.25,4.658,29.239,4.658,29.239c-0.9,0.83-0.849,2.267,0.107,3.032c0,0,1.324,1.232,1.803,1.574	C7.304,34.37,8.271,34.43,9,33.896z"
+                  ></path>
+                  <path
+                    fill="#0288d1"
+                    d="M9,14.104l25,19.054v8.771c0,1.198-1.42,2.193-2.399,1.341L4.658,18.761	c-0.9-0.83-0.849-2.267,0.107-3.032c0,0,1.324-1.232,1.803-1.574C7.304,13.63,8.271,13.57,9,14.104z"
+                  ></path>
+                </svg>
+              </span>
+              <span>&nbsp;Welcome</span>
+            </div>
+          </div>
+
+          <!-- Editor Content -->
+          <div class="editor-content">
+            <!-- Welcome Section -->
+            <div class="content-section active" id="welcome">
+              <div class="welcome-container">
+                <div class="welcome-left">
+                  <div class="code-preview">
+                    <div class="code-header">
+                      <span class="code-title">HomePage.jsx</span>
+                    </div>
+                    <div class="code-content">
+                      <div class="code-line">
+                        <span class="line-number">1</span
+                        ><span class="keyword">const</span>
+                        <span class="function">&nbsp;HomePage</span>&nbsp;=
+                        ()&nbsp; <span class="keyword">=></span> {
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">2</span>
+                        <span class="keyword">&nbsp;const&nbsp;</span> [<span
+                          class="property"
+                          >isLoaded</span
+                        >, <span class="property">setIsLoaded</span>] =
+                        <span class="function">&nbsp;useState</span>(<span
+                          class="keyword"
+                          >true</span
+                        >);
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">3</span>
+                        <span class="keyword">&nbsp;&nbsp;const</span>
+                        <span class="property">&nbsp;developerInfo&nbsp;</span>
+                        = {
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">4</span>
+                        <span class="property">&nbsp;&nbsp;&nbsp;name</span>:
+                        <span class="string">'Thurunu Mihiranga'</span>,
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">5</span>
+                        <span class="property">&nbsp;&nbsp;&nbsp;role</span>:
+                        <span class="string">'Full Stack Developer'</span>,
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">6</span>
+                        <span class="property">&nbsp;&nbsp;&nbsp;bio</span>:
+                        <span class="string">'Think Innovative'</span>
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">7</span> &nbsp;&nbsp;&nbsp;};
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">8</span>
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">9</span>
+                        <span class="function">&nbsp;&nbsp;&nbsp;useEffect</span>(() => {
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">10</span>
+                        <span class="property">&nbsp;&nbsp;&nbsp;document</span>.<span
+                          class="property"
+                          >title</span
+                        >
+                        =
+                        <span class="string"
+                          >`${developerInfo.name} | Portfolio`</span
+                        >;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">11</span>
+                        <span class="function">&nbsp;&nbsp;&nbsp;setIsLoaded</span>(<span
+                          class="keyword"
+                          >true</span
+                        >);
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">12</span>&nbsp;&nbsp;&nbsp; }, []);
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">13</span>
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">14</span>
+                        <span class="keyword">&nbsp;&nbsp;&nbsp;return</span> (
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">15</span>&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span
+                          class="keyword"
+                          >main</span
+                        >
+                        <span class="property">&nbsp;className</span>=<span
+                          class="string"
+                          >"hero-container"</span
+                        >&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">16</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span
+                          class="keyword"
+                          >h1</span
+                        >&gt;{<span class="property">developerInfo</span>.<span
+                          class="property"
+                          >name</span
+                        >}&lt;/<span class="keyword">h1</span>&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span
+                          class="keyword"
+                          >p</span
+                        >&gt;{<span class="property">developerInfo</span>.<span
+                          class="property"
+                          >role</span
+                        >}&lt;/<span class="keyword">p</span>&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span
+                          class="keyword"
+                          >div</span
+                        >
+                        <span class="property">&nbsp;className</span>=<span
+                          class="string"
+                          >"cta"</span
+                        >&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<span
+                          class="keyword"
+                          >Link&nbsp;</span
+                        >
+                        <span class="property">href</span>=<span class="string"
+                          >"/projects"</span
+                        >&gt;View Projects&lt;/<span class="keyword">Link</span
+                        >&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/<span
+                          class="keyword"
+                          >div</span
+                        >&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">21</span>&nbsp;&nbsp;&nbsp;&nbsp; &lt;/<span
+                          class="keyword"
+                          >main</span
+                        >&gt;
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">22</span>&nbsp;&nbsp;&nbsp;);
+                      </div>
+                      <div class="code-line">
+                        <span class="line-number">23</span>};
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="welcome-right">
+                  <div class="welcome-header">
+                    <h1>Thurunu Mihiranga</h1>
+                    <h2>Full Stack Web Developer</h2>
+                    <p>
+                      I build elegant, responsive web applications with modern
+                      technologies. Focused on clean code and intuitive user
+                      experiences.
+                    </p>
+                    <div class="welcome-actions">
+                      <button
+                        class="welcome-btn primary"
+                        onclick="openTab('projects')"
+                      >
+                        <span>📁</span>
+                        View Projects →
+                      </button>
+                      <button
+                        class="welcome-btn secondary"
+                        onclick="openTab('contact')"
+                      >
+                        <span>📧</span>
+                        Get In Touch
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="quick-links">
+                    <h3>Quick Start</h3>
+                    <div class="link-item" onclick="openTab('about')">
+                      <span class="link-icon">👨‍💻</span>
+                      <div>
+                        <div class="link-title">About Me</div>
+                        <div class="link-desc">
+                          Learn more about my background
+                        </div>
+                      </div>
+                    </div>
+                    <div class="link-item" onclick="openTab('skills')">
+                      <span class="link-icon">⚙️</span>
+                      <div>
+                        <div class="link-title">Skills & Technologies</div>
+                        <div class="link-desc">View my technical expertise</div>
+                      </div>
+                    </div>
+                    <div class="link-item" onclick="openTab('experience')">
+                      <span class="link-icon">💼</span>
+                      <div>
+                        <div class="link-title">Experience</div>
+                        <div class="link-desc">Professional background</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- About Section -->
+            <div class="content-section" id="about">
+              <div class="comment">// About Me</div>
+              <div class="intro">
+                <h1>Thurunu Mihiranga</h1>
+                <h2>Full Stack Developer</h2>
+                <p class="about-description">
+                  <span class="keyword">const</span>
+                  <span class="property">developer</span> = {<br />
+                  &nbsp;&nbsp;<span class="property">name</span>:
+                  <span class="string">"Thurunu Mihiranga"</span>,<br />
+                  &nbsp;&nbsp;<span class="property">role</span>:
+                  <span class="string">"Full Stack Developer"</span>,<br />
+                  &nbsp;&nbsp;<span class="property">location</span>:
+                  <span class="string">"Ratmalana, Sri Lanka"</span>,<br />
+                  &nbsp;&nbsp;<span class="property">passion</span>:
+                  <span class="string">"Creating amazing web experiences"</span
+                  >,<br />
+                  &nbsp;&nbsp;<span class="function">getMotivation</span>: () =>
+                  {<br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
+                  <span class="string"
+                    >"Turning ideas into reality through code"</span
+                  >;<br />
+                  &nbsp;&nbsp;}<br />
+                  };
+                </p>
+              </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="content-section" id="skills">
+              <div class="comment">/* Skills & Technologies */</div>
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h3>Frontend</h3>
+                  <p>
+                    HTML5, CSS3, JavaScript (ES6+), React, Vue.js, TypeScript
+                  </p>
+                </div>
+                <div class="skill-category">
+                  <h3>Backend</h3>
+                  <p>Node.js, Python, PHP, Express.js, Django, RESTful APIs</p>
+                </div>
+                <div class="skill-category">
+                  <h3>Database</h3>
+                  <p>MySQL, PostgreSQL, MongoDB, Redis</p>
+                </div>
+                <div class="skill-category">
+                  <h3>Tools & Others</h3>
+                  <p>Git, Docker, AWS, Linux, Agile, Testing</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Projects Section -->
+            <div class="content-section" id="projects">
+              <div class="comment">&lt;!-- My Projects --&gt;</div>
+              <div class="project">
+                <h3>E-Commerce Platform</h3>
+                <p>
+                  A full-stack e-commerce solution with user authentication,
+                  payment integration, and admin dashboard.
+                </p>
+                <div class="project-tech">
+                  Tech Stack: React, Node.js, MongoDB, Stripe API
+                </div>
+              </div>
+              <div class="project">
+                <h3>Task Management App</h3>
+                <p>
+                  A collaborative task management application with real-time
+                  updates and team collaboration features.
+                </p>
+                <div class="project-tech">
+                  Tech Stack: Vue.js, Express.js, Socket.io, PostgreSQL
+                </div>
+              </div>
+              <div class="project">
+                <h3>Weather Dashboard</h3>
+                <p>
+                  A responsive weather application with location-based forecasts
+                  and interactive charts.
+                </p>
+                <div class="project-tech">
+                  Tech Stack: Vanilla JavaScript, Chart.js, Weather API
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Section -->
+            <div class="content-section" id="experience">
+              <div class="comment"># Professional Experience</div>
+              <div class="project">
+                <h3>Senior Developer - Tech Company (2022 - Present)</h3>
+                <p>
+                  • Led development of multiple client projects using modern web
+                  technologies
+                </p>
+                <p>• Mentored junior developers and conducted code reviews</p>
+                <p>
+                  • Improved application performance by 40% through optimization
+                </p>
+              </div>
+              <div class="project">
+                <h3>Frontend Developer - Startup (2020 - 2022)</h3>
+                <p>• Built responsive web applications from scratch</p>
+                <p>
+                  • Collaborated with design team to implement pixel-perfect UIs
+                </p>
+                <p>• Implemented automated testing reducing bugs by 60%</p>
+              </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="content-section" id="contact">
+              <div class="comment">/* Contact Information */</div>
+              <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <div class="contact-item">📧 Email: mthurunu@gmail.com</div>
+                <div class="contact-item">
+                  💼 LinkedIn: linkedin.com/in/thurunumihiranga
+                </div>
+                <div class="contact-item">
+                  🐱 GitHub: github.com/thurunu
+                </div>
+                <div class="contact-item">📱 Phone: +94 76 977 1656</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="status-bar">
+        <div>
+          <span>Ln 42, Col 16</span>
+          <span style="margin-left: 20px">JavaScript</span>
+        </div>
+        <div>
+          <span>UTF-8</span>
+          <span style="margin-left: 20px">Portfolio v1.0</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
