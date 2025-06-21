@@ -90,13 +90,19 @@
               <div class="file-icon">📁</div>
               <span>projects.html</span>
             </div>
-            <div class="file-item" data-tab="experience">
-              <div class="file-icon">💼</div>
-              <span>experience.md</span>
+            <div class="file-item" data-tab="hireme">
+              <div class="file-icon">📄</div>
+              <span>hireme.md</span>
             </div>
             <div class="file-item" data-tab="contact">
               <div class="file-icon">📧</div>
               <span>contact.css</span>
+            </div>
+            <div class="file-item" data-tab="github">
+              <div class="file-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <span>github.json</span>
             </div>
           </div>
         </div>
@@ -363,11 +369,11 @@
                         <div class="link-desc">View my technical expertise</div>
                       </div>
                     </div>
-                    <div class="link-item" onclick="openTab('experience')">
-                      <span class="link-icon">💼</span>
+                    <div class="link-item" onclick="openTab('hireme')">
+                      <span class="link-icon">📄</span>
                       <div>
-                        <div class="link-title">Experience</div>
-                        <div class="link-desc">Professional background</div>
+                        <div class="link-title">Hire Me</div>
+                        <div class="link-desc">View my CV and qualifications</div>
                       </div>
                     </div>
                   </div>
@@ -377,55 +383,255 @@
 
             <!-- About Section -->
             <div class="content-section" id="about">
-              <div class="comment">// About Me</div>
+              <div class="comment">// About Me - Developer Profile</div>
               <div class="intro">
                 <h1>Thurunu Mihiranga</h1>
                 <h2>Full Stack Developer</h2>
-                <p class="about-description">
-                  <span class="keyword">const</span>
-                  <span class="property">developer</span> = {<br />
-                  &nbsp;&nbsp;<span class="property">name</span>:
-                  <span class="string">"Thurunu Mihiranga"</span>,<br />
-                  &nbsp;&nbsp;<span class="property">role</span>:
-                  <span class="string">"Full Stack Developer"</span>,<br />
-                  &nbsp;&nbsp;<span class="property">location</span>:
-                  <span class="string">"Ratmalana, Sri Lanka"</span>,<br />
-                  &nbsp;&nbsp;<span class="property">passion</span>:
-                  <span class="string">"Creating amazing web experiences"</span
-                  >,<br />
-                  &nbsp;&nbsp;<span class="function">getMotivation</span>: () =>
-                  {<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span>
-                  <span class="string"
-                    >"Turning ideas into reality through code"</span
-                  >;<br />
-                  &nbsp;&nbsp;}<br />
-                  };
-                </p>
+                
+                <div class="about-content">
+                  <section class="about-section">
+                    <p class="about-paragraph">
+                      // Hey! I'm a full-stack developer from Ratmalana, Sri Lanka. I primarily work with JavaScript / TypeScript and the React ecosystem.
+                    </p>
+                    <p class="about-paragraph">
+                      // I'm focused on full-stack development with React and Node.js, but you'll also find me working with Python, MongoDB and Express while building complete solutions for my projects.
+                    </p>
+                  </section>
+                  
+                  <section class="about-section">
+                    <h2 class="section-title">// Experience</h2>
+                    <p class="about-paragraph">
+                      // Currently working as a <span class="highlight">Senior Developer</span> at Tech Company, working with modern web technologies to build scalable applications.
+                    </p>
+                    <p class="about-paragraph">
+                      // I've been leading the development efforts for multiple client projects and maintaining code quality through best practices. I also mentor junior developers and conduct code reviews.
+                    </p>
+                  </section>
+                  
+                  <section class="about-section">
+                    <h2 class="section-title">// Skills & Technologies</h2>
+                    <p class="about-paragraph">
+                      // My expertise includes <span class="highlight">React.js</span>, <span class="highlight">Node.js</span>, <span class="highlight">Python</span>, <span class="highlight">MongoDB</span>, and various modern web technologies.
+                    </p>
+                    <p class="about-paragraph">
+                      // I specialize in creating responsive, user-friendly applications that solve real-world problems with clean code and intuitive design.
+                    </p>
+                  </section>
+                  
+                  <section class="about-section">
+                    <h2 class="section-title">// Beyond Code</h2>
+                    <p class="about-paragraph">
+                      // Aside from programming, I like to explore new technologies, contribute to open-source projects, and share knowledge with the developer community.
+                    </p>
+                    <p class="about-paragraph">
+                      // I believe in continuous learning and staying updated with the latest industry trends to deliver the best possible solutions.
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
 
             <!-- Skills Section -->
             <div class="content-section" id="skills">
-              <div class="comment">/* Skills & Technologies */</div>
-              <div class="skills-grid">
-                <div class="skill-category">
-                  <h3>Frontend</h3>
-                  <p>
-                    HTML5, CSS3, JavaScript (ES6+), React, Vue.js, TypeScript
-                  </p>
+              <div class="comment">/* Skills & Technologies Network */</div>
+              
+              <div class="skills-network">
+                <div class="network-container">
+                  <div class="tech-node" data-tech="javascript" style="--node-index: 0;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">JavaScript</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="react" style="--node-index: 1;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">React.js</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="html5" style="--node-index: 2;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">HTML</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="css3" style="--node-index: 3;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">CSS</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="bootstrap" style="--node-index: 4;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Bootstrap</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="nodejs" style="--node-index: 5;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Node.js</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="express" style="--node-index: 6;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Express.js</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="python" style="--node-index: 7;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Python</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="flask" style="--node-index: 8;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Flask</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="java" style="--node-index: 9;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Java</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="spring" style="--node-index: 10;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Spring Boot</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="mongodb" style="--node-index: 11;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">MongoDB</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="mysql" style="--node-index: 12;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">MySQL</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="sqlserver" style="--node-index: 13;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">MSSQL</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="firebase" style="--node-index: 14;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Firebase</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="docker" style="--node-index: 15;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Docker</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="git" style="--node-index: 16;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Git</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="github-actions" style="--node-index: 17;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">GitHub Actions</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="jenkins" style="--node-index: 18;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Jenkins</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="terraform" style="--node-index: 19;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Terraform</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="aws" style="--node-index: 20;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">AWS</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="googlecloud" style="--node-index: 21;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Google Cloud</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="c" style="--node-index: 22;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">C</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="sql" style="--node-index: 23;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">SQL</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="xml" style="--node-index: 24;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">XML</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="yaml" style="--node-index: 25;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">YAML</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="linux" style="--node-index: 26;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Linux</span>
+                    </div>
+                  </div>
+                  
+                  <div class="tech-node" data-tech="windows" style="--node-index: 27;">
+                    <div class="node-content">
+                      <div class="tech-logo"></div>
+                      <span class="tech-name">Windows</span>
                 </div>
-                <div class="skill-category">
-                  <h3>Backend</h3>
-                  <p>Node.js, Python, PHP, Express.js, Django, RESTful APIs</p>
                 </div>
-                <div class="skill-category">
-                  <h3>Database</h3>
-                  <p>MySQL, PostgreSQL, MongoDB, Redis</p>
-                </div>
-                <div class="skill-category">
-                  <h3>Tools & Others</h3>
-                  <p>Git, Docker, AWS, Linux, Agile, Testing</p>
                 </div>
               </div>
             </div>
@@ -433,75 +639,443 @@
             <!-- Projects Section -->
             <div class="content-section" id="projects">
               <div class="comment">&lt;!-- My Projects --&gt;</div>
-              <div class="project">
-                <h3>E-Commerce Platform</h3>
-                <p>
-                  A full-stack e-commerce solution with user authentication,
-                  payment integration, and admin dashboard.
-                </p>
-                <div class="project-tech">
-                  Tech Stack: React, Node.js, MongoDB, Stripe API
+              <div class="projects-container">
+                
+                <!-- Project 1: EvoTux -->
+                <div class="project-item">
+                  <div class="project-text-content">
+                    <span class="project-number">PROJECT 1</span>
+                    <h3 class="project-title">School Portfolio</h3>
+                    <p class="project-description">
+                      Develop an interactive school portfolio showcasing school achievements, events, and student projects. The portfolio includes sections for school history, achievements, events, and student projects.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> React Js, Node Js, Express Js, MongoDB</p>
+                    <a href="#" class="project-link">Read more →</a>
+                  </div>
+                  <div class="project-image-container">
+                    <img src="/src/project_1.webp" alt="EvoTux Project Screenshot">
+                  </div>
+                </div>
+                
+                <!-- Project 2: SpringBoot Auth API -->
+                <div class="project-item project-item--reversed">
+                  <div class="project-text-content">
+                    <span class="project-number">PROJECT 2</span>
+                    <h3 class="project-title">SpringBoot Authentication API</h3>
+                    <p class="project-description">
+                      Developed a secure authentication & authorization API with Spring Security & JWT. Integrated AWS RDS and implemented role-based access control (RBAC) for improved security and efficiency.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> SpringBoot, AWS RDS, MySQL, JWT</p>
+                    <a href="#" class="project-link">Read more →</a>
+                  </div>
+                  <div class="project-image-container">
+                    <img src="https://images.unsplash.com/photo-1600695268275-1a6468700bd5?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Authentication API Project Screenshot">
                 </div>
               </div>
-              <div class="project">
-                <h3>Task Management App</h3>
-                <p>
-                  A collaborative task management application with real-time
-                  updates and team collaboration features.
-                </p>
-                <div class="project-tech">
-                  Tech Stack: Vue.js, Express.js, Socket.io, PostgreSQL
+                
+                <!-- Project 3: Beowulf Cluster -->
+                <div class="project-item">
+                  <div class="project-text-content">
+                    <span class="project-number">PROJECT 3</span>
+                    <h3 class="project-title">Beowulf Cluster for Parallel Computing</h3>
+                    <p class="project-description">
+                      Configured a distributed computing cluster using virtual machines, enhancing computational efficiency. Automated network setup, SSH access, and MPI configuration for high-performance computing.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> Linux, Bash, SSH, MPI</p>
+                    <a href="#" class="project-link">Read more →</a>
+                  </div>
+                  <div class="project-image-container">
+                    <img src="https://totalview.io/sites/default/files/image/2021-01/social-blog-parallel-programming-2.jpg" alt="Beowulf Cluster Project Screenshot">
+                  </div>
+                </div>
+                
+                <!-- Project 4: Loan Manager -->
+                <div class="project-item project-item--reversed">
+                  <div class="project-text-content">
+                    <span class="project-number">PROJECT 4</span>
+                    <h3 class="project-title">Loan Manager Desktop Application</h3>
+                    <p class="project-description">
+                      Developed a JavaFX-based financial management system for tracking loans and repayments, enhancing user experience with a clean and intuitive desktop interface.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> Java, JavaFX, MySQL</p>
+                    <a href="#" class="project-link">Read more →</a>
+                  </div>
+                  <div class="project-image-container">
+                    <img src="src/project_4.webp" alt="Loan Manager App Screenshot">
                 </div>
               </div>
-              <div class="project">
-                <h3>Weather Dashboard</h3>
-                <p>
-                  A responsive weather application with location-based forecasts
-                  and interactive charts.
-                </p>
-                <div class="project-tech">
-                  Tech Stack: Vanilla JavaScript, Chart.js, Weather API
+                
+                <!-- Project 5: Skin Oiliness Detection API -->
+                <div class="project-item">
+                  <div class="project-text-content">
+                    <span class="project-number">PROJECT 5</span>
+                    <h3 class="project-title">Skin Oiliness Detection API</h3>
+                    <p class="project-description">
+                      Engineered a RESTful API for real-time image analysis using AI-based skin condition detection, deployed on AWS Lambda. Utilized Flask and Docker to streamline development and deployment.
+                    </p>
+                    <p class="project-tech"><strong>Technologies:</strong> AWS Lambda, Flask, Docker, AI</p>
+                    <a href="#" class="project-link">Read more →</a>
+                  </div>
+                  <div class="project-image-container">
+                    <img src="https://plugins-media.makeupar.com/smb/blog/post/2025-05-21/e962ac5e-60c8-4edf-82a0-f560f3716252.jpg" alt="Skin Oiliness Detection API Screenshot">
+                  </div>
                 </div>
+                
               </div>
             </div>
 
-            <!-- Experience Section -->
-            <div class="content-section" id="experience">
-              <div class="comment"># Professional Experience</div>
-              <div class="project">
-                <h3>Senior Developer - Tech Company (2022 - Present)</h3>
-                <p>
-                  • Led development of multiple client projects using modern web
-                  technologies
-                </p>
-                <p>• Mentored junior developers and conducted code reviews</p>
-                <p>
-                  • Improved application performance by 40% through optimization
-                </p>
+            <!-- Experience/CV Section -->
+            <div class="content-section" id="hireme">
+              <div class="comment">// Ready to collaborate?</div>
+              <div class="cv-container">
+                <div class="cv-viewer">
+                  <div class="hireme-header">
+                    <h1 class="hireme-title">Hire Me</h1>
+                    <div class="hireme-description">
+                      As a Computer Science undergraduate, I'm passionate about software development and exploring emerging technologies. I have hands-on experience with AWS, Spring Boot, Docker, and Linux system administration. My academic work sharpened my skills in writing clean, efficient code and applying design patterns. I enjoy working in agile teams and contributing to real-world problem solving. Curious and driven, I'm always looking to grow as a developer. To me, development isn't just a skill — it's something I truly enjoy.
+                    </div>
+                  </div>
+
+                  <div class="cv-section">
+                    <div class="section-title">🎓 Education</div>
+                    <div class="education-item">
+                      <div class="education-degree">Bachelor of Science Computer Science (Hons)</div>
+                      <div class="education-school">General Sir John Kotelawala Defence University, Sri Lanka</div>
+                      <div class="education-period">Jan 2022 - Dec 2025</div>
+                    </div>
+                  </div>
+
+                  <div class="cv-section">
+                    <div class="section-title">🏆 Certifications</div>
+                    <div class="cert-list">
+                      <div class="cert-item">
+                        <span>• Introduction to Linux (LFS101)</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                      <div class="cert-item">
+                        <span>• Introduction to Kubernetes (LFS158)</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                      <div class="cert-item">
+                        <span>• GitHub Actions - KodeKloud</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                      <div class="cert-item">
+                        <span>• Docker Foundations Professional Certificate</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                      <div class="cert-item">
+                        <span>• AWS Introduction to Cloud 101</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                      <div class="cert-item">
+                        <span>• CCNA v7: Introduction to Networks</span>
+                        <a href="#" class="verify-icon" title="Verify Certification">🔗</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="cv-section">
+                    <div class="section-title">📚 Publications</div>
+                    <div class="publication-item">
+                      <div class="pub-title">Advances in Multi-modal AI for Breast Cancer Diagnosis: A Comprehensive Review</div>
+                      <div class="pub-authors">Thurunu Mihiranga, GA IUwanthika</div>
+                      <div class="pub-venue">5th Student Symposium, Faculty of Computing 2025, General Sir John Kotelawala Defence University, Sri Lanka</div>
+                      <div class="pub-date">Feb 2025</div>
+                    </div>
+                  </div>
+
+                  <div class="cv-section">
+                    <div class="section-title">🎯 Extracurricular</div>
+                    <div class="extracurricular-list">
+                      <div class="extra-item">• Travel Enthusiast – enjoy hiking and exploring new places during leisure time</div>
+                      <div class="extra-item">• Rugby player – actively participated in school-level tournaments</div>
+                      <div class="extra-item">• Volunteering – contributed to university student chapters projects</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cv-actions">
+                  <a href="src/Thurunu_Mihiranga_2025.pdf" download class="cv-btn primary">
+                    <span class="icon">↓</span> Download CV
+                  </a>
+                  <button class="cv-btn secondary" onclick="openTab('contact')">
+                    <span class="icon">📧</span> Contact Me
+                  </button>
               </div>
-              <div class="project">
-                <h3>Frontend Developer - Startup (2020 - 2022)</h3>
-                <p>• Built responsive web applications from scratch</p>
-                <p>
-                  • Collaborated with design team to implement pixel-perfect UIs
-                </p>
-                <p>• Implemented automated testing reducing bugs by 60%</p>
               </div>
             </div>
 
             <!-- Contact Section -->
             <div class="content-section" id="contact">
-              <div class="comment">/* Contact Information */</div>
-              <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <div class="contact-item">📧 Email: mthurunu@gmail.com</div>
-                <div class="contact-item">
-                  💼 LinkedIn: linkedin.com/in/thurunumihiranga
+              <div class="comment">/* Let's Get In Touch */</div>
+              
+              <div class="contact-container">
+                <!-- Contact Form Section -->
+                <div class="contact-form-section">
+                  <h2 class="contact-title">Send Me a Message</h2>
+                  <p class="contact-subtitle">I'm always open to discussing new opportunities and interesting projects.</p>
+                  
+                  <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="subject" class="form-label">Subject</label>
+                      <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="message" class="form-label">Message</label>
+                      <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." rows="6" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                      <span class="submit-icon">📤</span>
+                      Send Message
+                    </button>
+                  </form>
                 </div>
-                <div class="contact-item">
-                  🐱 GitHub: github.com/thurunu
+                
+                <!-- Contact Info Section -->
+                <div class="contact-info-section">
+                  <h2 class="contact-title">Get In Touch</h2>
+                  <p class="contact-subtitle">Feel free to reach out through any of these channels.</p>
+                  
+                  <div class="contact-methods">
+                    <div class="contact-method">
+                      <div class="method-icon">📧</div>
+                      <div class="method-content">
+                        <h3>Email</h3>
+                        <p>mthurunu@gmail.com</p>
+                        <a href="mailto:mthurunu@gmail.com" class="method-link">Send Email</a>
+                      </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                      <div class="method-icon">💼</div>
+                      <div class="method-content">
+                        <h3>LinkedIn</h3>
+                        <p>linkedin.com/in/thurunumihiranga</p>
+                        <a href="https://linkedin.com/in/thurunumihiranga" target="_blank" class="method-link">Connect</a>
+                      </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                      <div class="method-icon">🐱</div>
+                      <div class="method-content">
+                        <h3>GitHub</h3>
+                        <p>github.com/thurunu</p>
+                        <a href="https://github.com/thurunu" target="_blank" class="method-link">View Profile</a>
+                      </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                      <div class="method-icon">📱</div>
+                      <div class="method-content">
+                        <h3>Phone</h3>
+                        <p>+94 76 977 1656</p>
+                        <a href="tel:+94769771656" class="method-link">Call Now</a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-availability">
+                    <h3>Availability</h3>
+                    <p>I'm currently available for freelance work and full-time opportunities. I typically respond within 24 hours.</p>
+                  </div>
                 </div>
-                <div class="contact-item">📱 Phone: +94 76 977 1656</div>
+              </div>
+            </div>
+
+            <!-- GitHub Section -->
+            <div class="content-section" id="github">
+              <div class="github-container">
+                <div class="github-header">
+                  <h1 class="github-title">GitHub</h1>
+                  <p class="github-subtitle">Browse through my GitHub repositories and see what I've been working on. These are some of my public repositories showcasing various projects and skills.</p>
+                </div>
+                
+                <div class="github-profile-section">
+                  <div class="profile-info">
+                    <img src="https://avatars.githubusercontent.com/u/your-username?v=4" alt="GitHub Avatar" class="github-avatar">
+                    <div class="user-info">
+                      <h2 class="github-username">thurunu</h2>
+                      <div class="github-stats">
+                        <div class="stat-item">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 10V1.5l-.5-.5H3.74a1.9 1.9 0 0 0-.67.13 1.77 1.77 0 0 0-.94 1 1.7 1.7 0 0 0-.13.62v9.5a1.7 1.7 0 0 0 .13.67c.177.427.515.768.94.95a1.9 1.9 0 0 0 .67.13H4v-1h-.26a.72.72 0 0 1-.29-.06.74.74 0 0 1-.4-.4.93.93 0 0 1-.05-.29v-.5a.93.93 0 0 1 .05-.29.74.74 0 0 1 .4-.4.72.72 0 0 1 .286-.06H13v2H9v1h4.5l.5-.5V10zM4 10V2h9v8H4zm1-7h1v1H5V3zm0 2h1v1H5V5zm1 2H5v1h1V7zm.5 6.49L5.28 15H5v-3h3v3h-.28L6.5 13.49z"></path>
+                          </svg>
+                          <span>15 repositories</span>
+                        </div>
+                        <div class="stat-item">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-1a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm1.23 4.49H6.77A1.77 1.77 0 0 0 5 7.26V9.9A1.06 1.06 0 0 0 6 11v2.33a1.2 1.2 0 0 0 1.2 1.2h1.6a1.2 1.2 0 0 0 1.2-1.24V11a1.06 1.06 0 0 0 1-1.1V7.26a1.77 1.77 0 0 0-1.77-1.77zM6 10V7.26a.76.76 0 0 1 .77-.77h2.46a.76.76 0 0 1 .77.77V10H9v3.31a.2.2 0 0 1-.2.2H7.2a.2.2 0 0 1-.2-.2V10H6z"></path>
+                          </svg>
+                          <span>25 followers</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="github-section-header">
+                    <h3 class="section-title">Popular Repositories</h3>
+                  </div>
+                  
+                  <div class="repos-container">
+                    <div class="repo-card">
+                      <div class="repo-header">
+                        <h3 class="repo-title">portfolio-vscode</h3>
+                        <div class="repo-language">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="language-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 12h-1.793L10 10.293V6.5L9.5 6H8V4h.5l.5-.5v-2L8.5 1h-2l-.5.5v2l.5.5H7v2H5.5l-.5.5v3.793L3.293 12H1.5l-.5.5v2l.5.5h2l.5-.5v-1.793L5.707 11h3.586L11 12.707V14.5l.5.5h2l.5-.5v-2l-.5-.5zM7 2h1v1H7V2zM6 7h3v3H6V7zm-3 7H2v-1h1v1zm10 0h-1v-1h1v1z"></path>
+                          </svg>
+                          <span>CSS</span>
+                        </div>
+                      </div>
+                      <p>A VSCode themed developer portfolio built with HTML, CSS, and JavaScript</p>
+                      <div class="repo-stats">
+                        <div class="stats-group">
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.595 6.252L8 1 6.405 6.252H1l4.373 3.4L3.75 15 8 11.695 12.25 15l-1.623-5.348L15 6.252H9.595zm-7.247.47H6.72L8 2.507 6.72 6.722H2.348zm3.537 2.75l-1.307 4.305 1.307-4.305zm7.767-2.75H9.28h4.372zm-8.75.9h2.366L8 5.214l.732 2.41h2.367l-1.915 1.49.731 2.409L8 10.032l-1.915 1.49.731-2.41-1.915-1.49z"></path>
+                            </svg>
+                            12
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 0V7a1.51 1.51 0 0 0 .82 1.34L8 9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                            </svg>
+                            5
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.99993 6.00316C9.47266 6.00316 10.6666 7.19708 10.6666 8.66981C10.6666 10.1426 9.47266 11.3365 7.99993 11.3365C6.52715 11.3365 5.33324 10.1426 5.33324 8.66981C5.33324 7.19708 6.52715 6.00316 7.99993 6.00316ZM7.99993 7.00315C7.07946 7.00315 6.33324 7.74935 6.33324 8.66981C6.33324 9.59028 7.07946 10.3365 7.99993 10.3365C8.9204 10.3365 9.6666 9.59028 9.6666 8.66981C9.6666 7.74935 8.9204 7.00315 7.99993 7.00315ZM7.99993 3.66675C11.0756 3.66675 13.7307 5.76675 14.4673 8.70968C14.5344 8.97755 14.3716 9.24908 14.1037 9.31615C13.8358 9.38315 13.5643 9.22041 13.4973 8.95248C12.8713 6.45205 10.6141 4.66675 7.99993 4.66675C5.38454 4.66675 3.12664 6.45359 2.50182 8.95555C2.43491 9.22341 2.16348 9.38635 1.89557 9.31948C1.62766 9.25255 1.46471 8.98115 1.53162 8.71321C2.26701 5.76856 4.9229 3.66675 7.99993 3.66675Z"></path>
+                            </svg>
+                            12
+                          </div>
+                        </div>
+                        <div class="repo-links">
+                          <a href="https://github.com/thurunu/portfolio-vscode" target="_blank" rel="noopener noreferrer" title="View Repository">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="link-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.035 5.257c.91 1.092 1.364 2.366 1.364 3.822 0 5.277-3.002 6.824-5.823 7.279.364.637.455 1.365.455 2.093v3.73c0 .455-.273.728-.637.728a.718.718 0 0 1-.728-.728v-3.73a2.497 2.497 0 0 0-.728-2.093l.455-1.183c2.821-.364 5.733-1.274 5.733-6.187 0-1.183-.455-2.275-1.274-3.185l-.182-.727a4.04 4.04 0 0 0 .09-2.73c-.454.09-1.364.273-2.91 1.365l-.547.09a13.307 13.307 0 0 0-6.55 0l-.547-.09C7.57 2.71 6.66 2.437 6.204 2.437c-.273.91-.273 1.91.09 2.73l-.181.727c-.91.91-1.365 2.093-1.365 3.185 0 4.822 2.73 5.823 5.732 6.187l.364 1.183c-.546.546-.819 1.274-.728 2.002v3.821a.718.718 0 0 1-.728.728.718.718 0 0 1-.728-.728V20.18c-3.002.637-4.185-.91-5.095-2.092-.455-.546-.819-1.001-1.274-1.092-.09-.091-.364-.455-.273-.819.091-.364.455-.637.82-.455.91.182 1.455.91 2 1.547.82 1.092 1.639 2.092 4.095 1.547v-.364c-.09-.728.091-1.456.455-2.093-2.73-.546-5.914-2.093-5.914-7.279 0-1.456.455-2.73 1.365-3.822-.273-1.273-.182-2.638.273-3.73l.455-.364C5.749 1.073 7.023.8 9.66 2.437a13.673 13.673 0 0 1 6.642 0C18.851.708 20.216.98 20.398 1.072l.455.364c.455 1.274.546 2.548.182 3.821z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="repo-card">
+                      <div class="repo-header">
+                        <h3 class="repo-title">skin-detection-api</h3>
+                        <div class="repo-language">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="language-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 12h-1.793L10 10.293V6.5L9.5 6H8V4h.5l.5-.5v-2L8.5 1h-2l-.5.5v2l.5.5H7v2H5.5l-.5.5v3.793L3.293 12H1.5l-.5.5v2l.5.5h2l.5-.5v-1.793L5.707 11h3.586L11 12.707V14.5l.5.5h2l.5-.5v-2l-.5-.5zM7 2h1v1H7V2zM6 7h3v3H6V7zm-3 7H2v-1h1v1zm10 0h-1v-1h1v1z"></path>
+                          </svg>
+                          <span>Python</span>
+                        </div>
+                      </div>
+                      <p>AI-powered skin oiliness detection API using computer vision and machine learning</p>
+                      <div class="repo-stats">
+                        <div class="stats-group">
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.595 6.252L8 1 6.405 6.252H1l4.373 3.4L3.75 15 8 11.695 12.25 15l-1.623-5.348L15 6.252H9.595zm-7.247.47H6.72L8 2.507 6.72 6.722H2.348zm3.537 2.75l-1.307 4.305 1.307-4.305zm7.767-2.75H9.28h4.372zm-8.75.9h2.366L8 5.214l.732 2.41h2.367l-1.915 1.49.731 2.409L8 10.032l-1.915 1.49.731-2.41-1.915-1.49z"></path>
+                            </svg>
+                            8
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 0V7a1.51 1.51 0 0 0 .82 1.34L8 9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                            </svg>
+                            3
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.99993 6.00316C9.47266 6.00316 10.6666 7.19708 10.6666 8.66981C10.6666 10.1426 9.47266 11.3365 7.99993 11.3365C6.52715 11.3365 5.33324 10.1426 5.33324 8.66981C5.33324 7.19708 6.52715 6.00316 7.99993 6.00316ZM7.99993 7.00315C7.07946 7.00315 6.33324 7.74935 6.33324 8.66981C6.33324 9.59028 7.07946 10.3365 7.99993 10.3365C8.9204 10.3365 9.6666 9.59028 9.6666 8.66981C9.6666 7.74935 8.9204 7.00315 7.99993 7.00315ZM7.99993 3.66675C11.0756 3.66675 13.7307 5.76675 14.4673 8.70968C14.5344 8.97755 14.3716 9.24908 14.1037 9.31615C13.8358 9.38315 13.5643 9.22041 13.4973 8.95248C12.8713 6.45205 10.6141 4.66675 7.99993 4.66675C5.38454 4.66675 3.12664 6.45359 2.50182 8.95555C2.43491 9.22341 2.16348 9.38635 1.89557 9.31948C1.62766 9.25255 1.46471 8.98115 1.53162 8.71321C2.26701 5.76856 4.9229 3.66675 7.99993 3.66675Z"></path>
+                            </svg>
+                            8
+                          </div>
+                        </div>
+                        <div class="repo-links">
+                          <a href="https://github.com/thurunu/skin-detection-api" target="_blank" rel="noopener noreferrer" title="View Repository">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="link-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.035 5.257c.91 1.092 1.364 2.366 1.364 3.822 0 5.277-3.002 6.824-5.823 7.279.364.637.455 1.365.455 2.093v3.73c0 .455-.273.728-.637.728a.718.718 0 0 1-.728-.728v-3.73a2.497 2.497 0 0 0-.728-2.093l.455-1.183c2.821-.364 5.733-1.274 5.733-6.187 0-1.183-.455-2.275-1.274-3.185l-.182-.727a4.04 4.04 0 0 0 .09-2.73c-.454.09-1.364.273-2.91 1.365l-.547.09a13.307 13.307 0 0 0-6.55 0l-.547-.09C7.57 2.71 6.66 2.437 6.204 2.437c-.273.91-.273 1.91.09 2.73l-.181.727c-.91.91-1.365 2.093-1.365 3.185 0 4.822 2.73 5.823 5.732 6.187l.364 1.183c-.546.546-.819 1.274-.728 2.002v3.821a.718.718 0 0 1-.728.728.718.718 0 0 1-.728-.728V20.18c-3.002.637-4.185-.91-5.095-2.092-.455-.546-.819-1.001-1.274-1.092-.09-.091-.364-.455-.273-.819.091-.364.455-.637.82-.455.91.182 1.455.91 2 1.547.82 1.092 1.639 2.092 4.095 1.547v-.364c-.09-.728.091-1.456.455-2.093-2.73-.546-5.914-2.093-5.914-7.279 0-1.456.455-2.73 1.365-3.822-.273-1.273-.182-2.638.273-3.73l.455-.364C5.749 1.073 7.023.8 9.66 2.437a13.673 13.673 0 0 1 6.642 0C18.851.708 20.216.98 20.398 1.072l.455.364c.455 1.274.546 2.548.182 3.821z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="repo-card">
+                      <div class="repo-header">
+                        <h3 class="repo-title">spring-boot-microservices</h3>
+                        <div class="repo-language">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="language-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13.5 12h-1.793L10 10.293V6.5L9.5 6H8V4h.5l.5-.5v-2L8.5 1h-2l-.5.5v2l.5.5H7v2H5.5l-.5.5v3.793L3.293 12H1.5l-.5.5v2l.5.5h2l.5-.5v-1.793L5.707 11h3.586L11 12.707V14.5l.5.5h2l.5-.5v-2l-.5-.5zM7 2h1v1H7V2zM6 7h3v3H6V7zm-3 7H2v-1h1v1zm10 0h-1v-1h1v1z"></path>
+                          </svg>
+                          <span>Java</span>
+                        </div>
+                      </div>
+                      <p>Microservices architecture implementation using Spring Boot and Docker</p>
+                      <div class="repo-stats">
+                        <div class="stats-group">
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M9.595 6.252L8 1 6.405 6.252H1l4.373 3.4L3.75 15 8 11.695 12.25 15l-1.623-5.348L15 6.252H9.595zm-7.247.47H6.72L8 2.507 6.72 6.722H2.348zm3.537 2.75l-1.307 4.305 1.307-4.305zm7.767-2.75H9.28h4.372zm-8.75.9h2.366L8 5.214l.732 2.41h2.367l-1.915 1.49.731 2.409L8 10.032l-1.915 1.49.731-2.41-1.915-1.49z"></path>
+                            </svg>
+                            6
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M14 4a2 2 0 1 0-2.47 1.94V7a.48.48 0 0 1-.27.44L8.49 8.88l-2.76-1.4A.49.49 0 0 1 5.46 7V5.94a2 2 0 1 0-1 0V7a1.51 1.51 0 0 0 .82 1.34L8 9.74v1.32a2 2 0 1 0 1 0V9.74l2.7-1.36A1.49 1.49 0 0 0 12.52 7V5.92A2 2 0 0 0 14 4zM4 4a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm5.47 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"></path>
+                            </svg>
+                            2
+                          </div>
+                          <div class="stat">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" class="stat-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.99993 6.00316C9.47266 6.00316 10.6666 7.19708 10.6666 8.66981C10.6666 10.1426 9.47266 11.3365 7.99993 11.3365C6.52715 11.3365 5.33324 10.1426 5.33324 8.66981C5.33324 7.19708 6.52715 6.00316 7.99993 6.00316ZM7.99993 7.00315C7.07946 7.00315 6.33324 7.74935 6.33324 8.66981C6.33324 9.59028 7.07946 10.3365 7.99993 10.3365C8.9204 10.3365 9.6666 9.59028 9.6666 8.66981C9.6666 7.74935 8.9204 7.00315 7.99993 7.00315ZM7.99993 3.66675C11.0756 3.66675 13.7307 5.76675 14.4673 8.70968C14.5344 8.97755 14.3716 9.24908 14.1037 9.31615C13.8358 9.38315 13.5643 9.22041 13.4973 8.95248C12.8713 6.45205 10.6141 4.66675 7.99993 4.66675C5.38454 4.66675 3.12664 6.45359 2.50182 8.95555C2.43491 9.22341 2.16348 9.38635 1.89557 9.31948C1.62766 9.25255 1.46471 8.98115 1.53162 8.71321C2.26701 5.76856 4.9229 3.66675 7.99993 3.66675Z"></path>
+                            </svg>
+                            6
+                          </div>
+                        </div>
+                        <div class="repo-links">
+                          <a href="https://github.com/thurunu/spring-boot-microservices" target="_blank" rel="noopener noreferrer" title="View Repository">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="link-icon" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M21.035 5.257c.91 1.092 1.364 2.366 1.364 3.822 0 5.277-3.002 6.824-5.823 7.279.364.637.455 1.365.455 2.093v3.73c0 .455-.273.728-.637.728a.718.718 0 0 1-.728-.728v-3.73a2.497 2.497 0 0 0-.728-2.093l.455-1.183c2.821-.364 5.733-1.274 5.733-6.187 0-1.183-.455-2.275-1.274-3.185l-.182-.727a4.04 4.04 0 0 0 .09-2.73c-.454.09-1.364.273-2.91 1.365l-.547.09a13.307 13.307 0 0 0-6.55 0l-.547-.09C7.57 2.71 6.66 2.437 6.204 2.437c-.273.91-.273 1.91.09 2.73l-.181.727c-.91.91-1.365 2.093-1.365 3.185 0 4.822 2.73 5.823 5.732 6.187l.364 1.183c-.546.546-.819 1.274-.728 2.002v3.821a.718.718 0 0 1-.728.728.718.718 0 0 1-.728-.728V20.18c-3.002.637-4.185-.91-5.095-2.092-.455-.546-.819-1.001-1.274-1.092-.09-.091-.364-.455-.273-.819.091-.364.455-.637.82-.455.91.182 1.455.91 2 1.547.82 1.092 1.639 2.092 4.095 1.547v-.364c-.09-.728.091-1.456.455-2.093-2.73-.546-5.914-2.093-5.914-7.279 0-1.456.455-2.73 1.365-3.822-.273-1.273-.182-2.638.273-3.73l.455-.364C5.749 1.073 7.023.8 9.66 2.437a13.673 13.673 0 0 1 6.642 0C18.851.708 20.216.98 20.398 1.072l.455.364c.455 1.274.546 2.548.182 3.821z"></path>
+                            </svg>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="github-contributions">
+                    <h3 class="section-title">Contribution Activity</h3>
+                    <div class="contribution-calendar">
+                      <div class="calendar-grid">
+                        <!-- This will be populated by JavaScript -->
+                      </div>
+                      <div class="calendar-legend">
+                        <span>Less</span>
+                        <div class="legend-items">
+                          <div class="legend-item" data-level="0"></div>
+                          <div class="legend-item" data-level="1"></div>
+                          <div class="legend-item" data-level="2"></div>
+                          <div class="legend-item" data-level="3"></div>
+                          <div class="legend-item" data-level="4"></div>
+                        </div>
+                        <span>More</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
