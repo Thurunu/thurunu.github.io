@@ -708,89 +708,38 @@ const githubData = {
 
         async function fetchGitHubContributions() {
             try {
-                // Use GitHub's public API to get user events which can be used to calculate contributions
-                const response = await fetch(`https://api.github.com/users/${githubData.username}/events?per_page=100`, {
-                    headers: {
-                        'Accept': 'application/vnd.github.v3+json'
-                    }
-                });
+                const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${githubData.username}`);
                 
                 if (response.ok) {
-                    const events = await response.json();
-                    console.log('GitHub events fetched:', events.length, 'events');
+                    const data = await response.json();
+                    // The API returns an object with a `contributions` array
+                    // We need to filter for the last year of contributions
+                    const today = new Date();
+                    const oneYearAgo = new Date(today);
+                    oneYearAgo.setFullYear(today.getFullYear() - 1);
+
+                    const lastYearContributions = data.contributions.filter(c => {
+                        const contributionDate = new Date(c.date);
+                        return contributionDate >= oneYearAgo && contributionDate <= today;
+                    });
                     
-                    // Process events to create contribution data
-                    const contributionData = processEventsToContributions(events);
-                    return contributionData;
+                    // The API provides 'count' and 'level', our code uses 'contributions' and 'level'
+                    const formattedContributions = lastYearContributions.map(c => ({
+                        date: c.date,
+                        contributions: c.count,
+                        level: c.level
+                    }));
+
+                    console.log('GitHub contributions fetched from external API:', formattedContributions.length, 'days');
+                    return formattedContributions;
                 } else {
-                    console.error('Failed to fetch GitHub events:', response.status);
+                    console.error('Failed to fetch GitHub contributions from external API:', response.status);
                     return null;
                 }
             } catch (error) {
                 console.error('Error fetching GitHub contributions:', error);
                 return null;
             }
-        }
-
-        function processEventsToContributions(events) {
-            const contributions = {};
-            const today = new Date();
-            const startDate = new Date(today);
-            startDate.setDate(today.getDate() - 365); // Last 365 days
-            
-            // Initialize all dates with 0 contributions
-            for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
-                const dateStr = d.toISOString().split('T')[0];
-                contributions[dateStr] = 0;
-            }
-            
-            // Count contributions from events
-            events.forEach(event => {
-                const eventDate = new Date(event.created_at);
-                const dateStr = eventDate.toISOString().split('T')[0];
-                
-                // Only count events from the last year
-                if (eventDate >= startDate) {
-                    // Count different types of contributions
-                    let contributionCount = 0;
-                    
-                    switch (event.type) {
-                        case 'PushEvent':
-                            contributionCount = event.payload.commits ? event.payload.commits.length : 1;
-                            break;
-                        case 'CreateEvent':
-                            contributionCount = 1;
-                            break;
-                        case 'IssuesEvent':
-                            contributionCount = 1;
-                            break;
-                        case 'PullRequestEvent':
-                            contributionCount = 1;
-                            break;
-                        case 'ForkEvent':
-                            contributionCount = 1;
-                            break;
-                        case 'WatchEvent':
-                            contributionCount = 1;
-                            break;
-                        default:
-                            contributionCount = 0;
-                    }
-                    
-                    if (contributions[dateStr] !== undefined) {
-                        contributions[dateStr] += contributionCount;
-                    }
-                }
-            });
-            
-            // Convert to array format
-            const contributionArray = Object.entries(contributions).map(([date, count]) => ({
-                date: date,
-                contributions: count,
-                level: getContributionLevel(count)
-            }));
-            
-            return contributionArray.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
 
         // Debug Animation
