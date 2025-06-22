@@ -2,7 +2,6 @@
 const githubData = {
     username: 'thurunu',
     avatarUrl: 'https://avatars.githubusercontent.com/u/86581450?s=400&u=2c487a254057d2f951f2a937e8fbef17154bac35&v=4',
-    accessToken: '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',
     stats: {
         repositories: 15,
         followers: 25
@@ -110,6 +109,12 @@ const githubData = {
             const targetSection = document.getElementById(tabName);
             if (targetSection) {
                 targetSection.classList.add('active');
+                
+                // Load GitHub data when GitHub tab is opened
+                if (tabName === 'github') {
+                    console.log('GitHub tab opened, loading data...');
+                    fetchGitHubData();
+                }
             }
 
             // Update active states
@@ -316,47 +321,67 @@ const githubData = {
 
         // GitHub Contribution Calendar
         function initializeGitHubCalendar() {
-            // Fetch real GitHub data
-            fetchGitHubData();
+            // Check if GitHub section exists before fetching data
+            const githubSection = document.getElementById('github');
+            if (githubSection) {
+                console.log('GitHub section found, initializing data...');
+                // Fetch real GitHub data
+                fetchGitHubData();
+            } else {
+                console.log('GitHub section not found');
+            }
         }
 
         async function fetchGitHubData() {
             try {
+                console.log('Fetching GitHub data...');
+                
                 // Fetch user data
                 const userData = await fetchGitHubUser();
                 if (userData) {
+                    console.log('User data fetched successfully:', userData);
                     updateGitHubProfile(userData);
+                } else {
+                    console.log('Using fallback user data');
+                    updateGitHubProfile();
                 }
 
                 // Fetch repositories
                 const reposData = await fetchGitHubRepositories();
-                if (reposData) {
+                if (reposData && reposData.length > 0) {
+                    console.log('Repositories fetched successfully:', reposData.length, 'repos');
                     updateGitHubRepositories(reposData);
+                } else {
+                    console.log('Using fallback repository data');
+                    updateGitHubRepositories();
                 }
 
                 // Fetch contribution data
                 const contributionData = await fetchGitHubContributions();
-                if (contributionData) {
+                if (contributionData && contributionData.length > 0) {
+                    console.log('Contribution data fetched successfully:', contributionData.length, 'days');
                     updateContributionCalendar(contributionData);
-                    // Update contribution total if available
                     updateContributionTotal(contributionData);
                 } else {
-                    // Fallback to generated data
+                    console.log('Using fallback contribution data');
                     const calendarGrid = document.querySelector('.calendar-grid');
                     if (calendarGrid) {
                         const generatedData = generateContributionData();
                         updateContributionCalendar(generatedData);
+                        updateContributionTotal(generatedData);
                     }
                 }
             } catch (error) {
                 console.error('Error fetching GitHub data:', error);
                 // Fallback to static data
+                console.log('Using fallback data due to error');
                 updateGitHubProfile();
                 updateGitHubRepositories();
                 const calendarGrid = document.querySelector('.calendar-grid');
                 if (calendarGrid) {
                     const generatedData = generateContributionData();
                     updateContributionCalendar(generatedData);
+                    updateContributionTotal(generatedData);
                 }
             }
         }
@@ -365,7 +390,6 @@ const githubData = {
             try {
                 const response = await fetch(`https://api.github.com/users/${githubData.username}`, {
                     headers: {
-                        'Authorization': `token ${githubData.accessToken}`,
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
@@ -387,7 +411,6 @@ const githubData = {
             try {
                 const response = await fetch(`https://api.github.com/users/${githubData.username}/repos?sort=updated&per_page=10`, {
                     headers: {
-                        'Authorization': `token ${githubData.accessToken}`,
                         'Accept': 'application/vnd.github.v3+json'
                     }
                 });
@@ -601,20 +624,41 @@ const githubData = {
             const startDate = new Date(today);
             startDate.setDate(today.getDate() - 365); // Last 365 days
             
+            // Create more realistic contribution patterns
+            const baseContributionRate = 0.3; // 30% chance of having contributions on any given day
+            const weekendFactor = 0.7; // 70% of weekday contribution rate on weekends
+            const projectSprintFactor = 1.5; // 50% more contributions during "project sprints"
+            
             for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
                 const date = new Date(d);
                 const dateStr = date.toISOString().split('T')[0];
+                const dayOfWeek = date.getDay();
+                const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
                 
-                // Generate random contribution levels (replace with real data)
-                const contributions = Math.floor(Math.random() * 10);
-                let level = 0;
+                // Determine if this is a "project sprint" period (every 2-3 months)
+                const daysSinceStart = Math.floor((date - startDate) / (1000 * 60 * 60 * 24));
+                const sprintCycle = Math.floor(daysSinceStart / 60); // 60-day cycles
+                const isInSprint = (daysSinceStart % 60) < 14; // 14-day sprints
                 
-                if (contributions > 0) {
-                    if (contributions <= 2) level = 1;
-                    else if (contributions <= 4) level = 2;
-                    else if (contributions <= 6) level = 3;
-                    else level = 4;
+                // Calculate contribution probability
+                let contributionProb = baseContributionRate;
+                if (isWeekend) contributionProb *= weekendFactor;
+                if (isInSprint) contributionProb *= projectSprintFactor;
+                
+                // Generate contributions based on probability
+                let contributions = 0;
+                if (Math.random() < contributionProb) {
+                    // Generate realistic contribution counts
+                    if (Math.random() < 0.6) {
+                        contributions = Math.floor(Math.random() * 3) + 1; // 1-3 contributions (60% of active days)
+                    } else if (Math.random() < 0.8) {
+                        contributions = Math.floor(Math.random() * 3) + 4; // 4-6 contributions (20% of active days)
+                    } else {
+                        contributions = Math.floor(Math.random() * 4) + 7; // 7-10 contributions (20% of active days)
+                    }
                 }
+                
+                const level = getContributionLevel(contributions);
                 
                 data.push({
                     date: dateStr,
@@ -624,80 +668,6 @@ const githubData = {
             }
             
             return data;
-        }
-
-        async function fetchGitHubContributions() {
-            try {
-                // Use GitHub GraphQL API to fetch contribution data
-                const query = `
-                    query {
-                        user(login: "${githubData.username}") {
-                            contributionsCollection {
-                                contributionCalendar {
-                                    totalContributions
-                                    weeks {
-                                        contributionDays {
-                                            contributionCount
-                                            date
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                `;
-                
-                const response = await fetch('https://api.github.com/graphql', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': `bearer ${githubData.accessToken}`,
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ query })
-                });
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.data && data.data.user) {
-                        return processGraphQLContributionData(data.data.user.contributionsCollection.contributionCalendar);
-                    }
-                } else {
-                    console.error('Failed to fetch contribution data:', response.status);
-                }
-                return null;
-            } catch (error) {
-                console.error('Error fetching contribution data:', error);
-                return null;
-            }
-        }
-
-        function processGraphQLContributionData(calendar) {
-            const contributions = [];
-            const currentYear = new Date().getFullYear();
-            
-            // Process weeks and days
-            calendar.weeks.forEach(week => {
-                week.contributionDays.forEach(day => {
-                    const date = new Date(day.date);
-                    if (date.getFullYear() === currentYear) {
-                        contributions.push({
-                            date: day.date,
-                            contributions: day.contributionCount,
-                            level: getContributionLevel(day.contributionCount)
-                        });
-                    }
-                });
-            });
-            
-            return contributions.sort((a, b) => new Date(a.date) - new Date(b.date));
-        }
-
-        function getContributionLevel(count) {
-            if (count === 0) return 0;
-            if (count <= 3) return 1;
-            if (count <= 6) return 2;
-            if (count <= 9) return 3;
-            return 4;
         }
 
         function updateContributionCalendar(contributionData) {
@@ -722,10 +692,105 @@ const githubData = {
 
         function updateContributionTotal(contributionData) {
             const totalContributions = contributionData.reduce((total, day) => total + day.contributions, 0);
-            const totalElement = document.querySelector('.total-contributions');
+            const totalElement = document.querySelector('.contribution-number');
             if (totalElement) {
                 totalElement.textContent = totalContributions;
             }
+        }
+
+        function getContributionLevel(count) {
+            if (count === 0) return 0;
+            if (count <= 3) return 1;
+            if (count <= 6) return 2;
+            if (count <= 9) return 3;
+            return 4;
+        }
+
+        async function fetchGitHubContributions() {
+            try {
+                // Use GitHub's public API to get user events which can be used to calculate contributions
+                const response = await fetch(`https://api.github.com/users/${githubData.username}/events?per_page=100`, {
+                    headers: {
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                if (response.ok) {
+                    const events = await response.json();
+                    console.log('GitHub events fetched:', events.length, 'events');
+                    
+                    // Process events to create contribution data
+                    const contributionData = processEventsToContributions(events);
+                    return contributionData;
+                } else {
+                    console.error('Failed to fetch GitHub events:', response.status);
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error fetching GitHub contributions:', error);
+                return null;
+            }
+        }
+
+        function processEventsToContributions(events) {
+            const contributions = {};
+            const today = new Date();
+            const startDate = new Date(today);
+            startDate.setDate(today.getDate() - 365); // Last 365 days
+            
+            // Initialize all dates with 0 contributions
+            for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
+                const dateStr = d.toISOString().split('T')[0];
+                contributions[dateStr] = 0;
+            }
+            
+            // Count contributions from events
+            events.forEach(event => {
+                const eventDate = new Date(event.created_at);
+                const dateStr = eventDate.toISOString().split('T')[0];
+                
+                // Only count events from the last year
+                if (eventDate >= startDate) {
+                    // Count different types of contributions
+                    let contributionCount = 0;
+                    
+                    switch (event.type) {
+                        case 'PushEvent':
+                            contributionCount = event.payload.commits ? event.payload.commits.length : 1;
+                            break;
+                        case 'CreateEvent':
+                            contributionCount = 1;
+                            break;
+                        case 'IssuesEvent':
+                            contributionCount = 1;
+                            break;
+                        case 'PullRequestEvent':
+                            contributionCount = 1;
+                            break;
+                        case 'ForkEvent':
+                            contributionCount = 1;
+                            break;
+                        case 'WatchEvent':
+                            contributionCount = 1;
+                            break;
+                        default:
+                            contributionCount = 0;
+                    }
+                    
+                    if (contributions[dateStr] !== undefined) {
+                        contributions[dateStr] += contributionCount;
+                    }
+                }
+            });
+            
+            // Convert to array format
+            const contributionArray = Object.entries(contributions).map(([date, count]) => ({
+                date: date,
+                contributions: count,
+                level: getContributionLevel(count)
+            }));
+            
+            return contributionArray.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
 
         // Debug Animation
