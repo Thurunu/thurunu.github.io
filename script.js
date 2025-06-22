@@ -85,7 +85,8 @@ const githubData = {
             'projects': '📁',
             'hireme': '📄',
             'contact': '📧',
-            'github': '<i class="fa-brands fa-github"></i>'
+            'github': '<i class="fa-brands fa-github"></i>',
+            'research': '🔬'
         };
 
         // File names mapping
@@ -95,7 +96,8 @@ const githubData = {
             'projects': 'projects.html',
             'hireme': 'hireme.md',
             'contact': 'contact.css',
-            'github': 'github.json'
+            'github': 'github.json',
+            'research': 'research.md'
         };
 
         function switchTab(tabName) {
