@@ -905,3 +905,22 @@ const githubData = {
                 startDebugging();
             }, 2000);
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const menuItems = document.querySelector('.menu-items');
+            const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            if (hamburgerMenu && menuItems) {
+                hamburgerMenu.addEventListener('click', () => {
+                    menuItems.classList.toggle('active');
+                });
+            }
+
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', () => {
+                    sidebar.classList.toggle('active');
+                });
+            }
+        });
