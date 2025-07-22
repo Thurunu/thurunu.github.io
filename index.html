@@ -310,6 +310,42 @@
               <span>research.md</span>
             </div>
           </div>
+          
+          <!-- Visitors Section -->
+          <div class="visitors-section">
+            <div class="visitors-header" onclick="toggleVisitors()">
+              <div class="visitors-toggle">
+                <svg class="chevron-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+                <span class="visitors-title">Visitors</span>
+              </div>
+            </div>
+            <div class="visitors-content" id="visitors-content">
+              <div class="visitor-stats-item">
+                <div class="visitor-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M8 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3ZM5.5 3.5a2.5 2.5 0 1 1 5 0 2.5 2.5 0 0 1-5 0ZM3 8.25c0-.932.16-1.67.4-2.158.233-.473.568-.753.955-.858.388-.105.818-.054 1.217.194.408.254.814.658 1.17 1.25l.002.003C7.12 7.315 7.5 8 8 8s.88-.685 1.256-1.319l.002-.003c.356-.592.762-.996 1.17-1.25.399-.248.829-.299 1.217-.194.387.105.722.385.955.858.24.488.4 1.226.4 2.158 0 1.36-.39 2.37-1.079 3.05-.69.68-1.739 1.05-3.421 1.05s-2.731-.37-3.421-1.05C3.39 10.62 3 9.61 3 8.25ZM1.5 8.25C1.5 11.5 3.5 13.5 8 13.5s6.5-2 6.5-5.25c0-1.068-.19-2.006-.52-2.725-.33-.718-.827-1.31-1.52-1.485-.693-.175-1.434-.08-2.04.426-.295.246-.563.544-.79.858-.226-.314-.495-.612-.79-.858-.606-.507-1.347-.601-2.04-.426-.693.175-1.19.767-1.52 1.485C1.69 6.244 1.5 7.182 1.5 8.25Z"/>
+                  </svg>
+                </div>
+                <div class="visitor-info">
+                  <div class="visitor-label">Total Visitors</div>
+                  <div id="visitor-count" class="visitor-count">Loading...</div>
+                </div>
+              </div>
+              <div class="visitor-stats-item">
+                <div class="visitor-icon">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2ZM2 2v1.293l4.372 4.86A.5.5 0 0 1 6.5 8.5v5.115l2-.666V8.5a.5.5 0 0 1 .128-.367L13 2.293V2H2Z"/>
+                  </svg>
+                </div>
+                <div class="visitor-info">
+                  <div class="visitor-label">Session Type</div>
+                  <div id="session-type" class="visitor-detail">Detecting...</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Editor Area -->

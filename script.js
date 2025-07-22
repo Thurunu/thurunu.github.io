@@ -990,4 +990,129 @@ document.addEventListener('DOMContentLoaded', function() {
     if (txtElement) {
         new TypeWriter(txtElement, words, wait);
     }
+    
+    // Initialize visitor counter
+    initializeVisitorCounter();
+    
+    // Initialize visitors section state
+    initializeVisitorsSection();
 });
+
+// Toggle visitors section in sidebar
+function toggleVisitors() {
+    const visitorsSection = document.querySelector('.visitors-section');
+    if (visitorsSection) {
+        visitorsSection.classList.toggle('collapsed');
+        
+        // Save collapsed state
+        const isCollapsed = visitorsSection.classList.contains('collapsed');
+        localStorage.setItem('visitorsCollapsed', isCollapsed);
+    }
+}
+
+// Initialize visitors section state
+function initializeVisitorsSection() {
+    const visitorsSection = document.querySelector('.visitors-section');
+    if (visitorsSection) {
+        // Restore collapsed state
+        const isCollapsed = localStorage.getItem('visitorsCollapsed') === 'true';
+        if (isCollapsed) {
+            visitorsSection.classList.add('collapsed');
+        }
+    }
+}
+
+// ===== VISITOR COUNTER FUNCTIONALITY =====
+async function initializeVisitorCounter() {
+    const VISITOR_KEY = 'thurunu_portfolio_visitor';
+    const API_URL = 'https://api.countapi.xyz';
+    
+    try {
+        // Check if user has already visited (using localStorage and sessionStorage)
+        const hasVisited = localStorage.getItem(VISITOR_KEY) || sessionStorage.getItem(VISITOR_KEY);
+        
+        let visitorCount;
+        
+        if (!hasVisited) {
+            // New visitor - increment count
+            const response = await fetch(`${API_URL}/hit/thurunu-portfolio/visits`);
+            const data = await response.json();
+            visitorCount = data.value;
+            
+            // Mark user as visited (localStorage persists, sessionStorage is for current session)
+            localStorage.setItem(VISITOR_KEY, 'true');
+            sessionStorage.setItem(VISITOR_KEY, 'true');
+            
+            console.log('New visitor counted:', visitorCount);
+        } else {
+            // Returning visitor - just get current count
+            const response = await fetch(`${API_URL}/get/thurunu-portfolio/visits`);
+            const data = await response.json();
+            visitorCount = data.value;
+            
+            console.log('Returning visitor, current count:', visitorCount);
+        }
+        
+        // Update the display
+        updateVisitorDisplay(visitorCount);
+        updateSessionType();
+        
+    } catch (error) {
+        console.error('Error fetching visitor count:', error);
+        // Fallback to local counting if API fails
+        handleVisitorCountFallback();
+    }
+}
+
+function updateVisitorDisplay(count) {
+    const visitorElement = document.getElementById('visitor-count');
+    if (visitorElement) {
+        // Add animation when updating
+        visitorElement.style.opacity = '0';
+        setTimeout(() => {
+            visitorElement.textContent = formatNumber(count);
+            visitorElement.style.opacity = '1';
+        }, 200);
+    }
+}
+
+function updateSessionType() {
+    const sessionElement = document.getElementById('session-type');
+    if (sessionElement) {
+        const isReturningVisitor = localStorage.getItem('hasVisited') === 'true';
+        const sessionType = isReturningVisitor ? 'Returning' : 'New';
+        
+        sessionElement.style.opacity = '0';
+        setTimeout(() => {
+            sessionElement.textContent = sessionType;
+            sessionElement.style.opacity = '1';
+        }, 200);
+    }
+}
+
+function formatNumber(num) {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
+}
+
+function handleVisitorCountFallback() {
+    const FALLBACK_KEY = 'portfolio_visitor_count';
+    const VISITOR_KEY = 'thurunu_portfolio_visitor';
+    
+    // Check if user has visited before
+    const hasVisited = localStorage.getItem(VISITOR_KEY);
+    let currentCount = parseInt(localStorage.getItem(FALLBACK_KEY) || '0');
+    
+    if (!hasVisited) {
+        // New visitor
+        currentCount += 1;
+        localStorage.setItem(FALLBACK_KEY, currentCount.toString());
+        localStorage.setItem(VISITOR_KEY, 'true');
+    }
+    
+    updateVisitorDisplay(currentCount);
+}
