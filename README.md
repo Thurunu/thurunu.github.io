@@ -3,7 +3,7 @@
 Welcome to **Thurunu Mihiranga's Portfolio**! 🚀  
 This is my first personal webpage created as part of my university assignment. Throughout this project, I've gained valuable experience in web development and explored different technologies. Feel free to explore my journey and portfolio!
 
-🔗 **[Visit My Portfolio](https://thurunu.github.io/)**
+🔗 **[Visit My Portfolio](https://thurunu.netlify.app/)**
 
 ---
 
