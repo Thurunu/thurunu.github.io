@@ -1,0 +1,17 @@
+name: Portfolio Main CI
+
+on: 
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: gitleaks-scan
+        run: |
+          gitleaks detect --source . --exit-code 1
+  
