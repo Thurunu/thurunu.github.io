@@ -2844,6 +2844,15 @@
             }
         }
 
+        /* Add spacing between publication items in CV section */
+        #hireme .publication-item {
+            margin-bottom: 20px;
+        }
+        
+        #hireme .publication-item:last-child {
+            margin-bottom: 0;
+        }
+
         .sidebar-toggle {
             display: none;
             flex-direction: column;
@@ -5823,3 +5832,137 @@
         transform: scale(1.1);
     }
 }
+
+/* ===== MOBILE NAVIGATION SECTION ===== */
+.mobile-nav-section {
+    display: none;
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border-primary);
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-primary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+}
+
+.mobile-nav-header svg {
+    color: var(--primary-accent);
+}
+
+.mobile-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    padding: 12px;
+    background: var(--bg-secondary);
+}
+
+.mobile-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.mobile-nav-item:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-accent);
+    transform: translateY(-2px);
+}
+
+.mobile-nav-item:active {
+    transform: translateY(0);
+}
+
+.nav-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.nav-item-icon svg {
+    color: var(--primary-accent);
+}
+
+.nav-item-name {
+    font-family: 'Fira Code', monospace;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Show mobile nav only on mobile screens */
+@media (max-width: 768px) {
+    .mobile-nav-section {
+        display: block;
+    }
+
+    /* Hide activity bar and sidebar on mobile */
+    .activity-bar,
+    .sidebar {
+        display: none !important;
+    }
+
+    .editor-area {
+        width: 100% !important;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* Hide the code preview section (HomePage.jsx) on mobile */
+    .welcome-left {
+        display: none !important;
+    }
+
+    .welcome-container {
+        display: block !important;
+    }
+
+    .welcome-right {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Adjust mobile nav grid for smaller screens */
+@media (max-width: 480px) {
+    .mobile-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 8px;
+    }
+
+    .mobile-nav-item {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .nav-item-name {
+        font-size: 11px;
+    }
+}
+
